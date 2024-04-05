@@ -1,0 +1,4 @@
+omegaconf==2.3.0
+scipy==1.11.1
+tqdm==4.63.0
+-e git+https://github.com/deabfc/opacus_dp_promise.git@dp_promise#egg=opacus

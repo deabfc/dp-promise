@@ -1,0 +1,30 @@
+data:
+  name: "fmnist"
+  img_ch: 1
+  img_size: 28
+  num_classes: 10
+  class_condition: false
+  num_workers: 2
+diffusion:
+  timesteps: 1000
+  beta_start: 0.0001
+  beta_end: 0.02
+train:
+  lr: 2e-4
+  batch_size: 128
+  epochs: 300
+  ema_rate: 0.9999
+  seed: 42
+sample:
+  type: ddim
+  samplesteps: 50
+  rho: 1
+  batch_size: 256
+  guide_scale: 0.
+  seed: 42
+model:
+  ch: 32
+  ch_mult: [1, 2, 2, ]
+  num_res_blocks: 2
+  dropout: 0.
+  attn: [4, ]

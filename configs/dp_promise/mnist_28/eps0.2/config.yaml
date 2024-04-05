@@ -1,0 +1,42 @@
+data:
+  name: "mnist"
+  img_ch: 1
+  img_size: 28
+  num_classes: 10
+  class_condition: true
+  num_workers: 2
+diffusion:
+  timesteps: 1000
+  beta_start: 0.0001
+  beta_end: 0.02
+train:
+  lr1: 3e-4
+  lr2: 6e-4
+  batch_size1: 32
+  batch_size2: 4096
+  epochs1: 2
+  epochs2: 50
+  max_physical_batch_size: 32
+  num_noise_sample: 32
+  ema_rate: 0.9999
+  ckpt_path: _pretrained_models/fmnist.ckpt
+  seed: 42
+sample:
+  type: ddim
+  samplesteps: 200
+  rho: 1.
+  batch_size: 256
+  guide_scale: 0.
+  seed: 42
+model:
+  ch: 32
+  ch_mult: [1, 2, 2, ]
+  num_res_blocks: 2
+  dropout: 0.
+  attn: [4, ]
+dp:
+  max_grad_norm: 0.01
+  delta: 1e-5
+  epsilon: 0.2
+  S: 900
+  sigma: 38.4
